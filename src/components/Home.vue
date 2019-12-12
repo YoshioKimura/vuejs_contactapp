@@ -60,7 +60,7 @@
           </div>
         </div>
 
-        <div class="user-list" v-for="person in contacts" v-bind:key="person">
+        <div class="user-list" v-for="person in contacts" >
           <div class="columns">
             <div class="column is-8">
               <p class="user-list__header">{{person.firstname}} {{person.lastname}}</p>

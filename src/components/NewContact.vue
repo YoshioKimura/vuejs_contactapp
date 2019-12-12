@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     saveContact () {
-      db.collection('contact')
+      db.collection('contacts')
         .add({
           firstname: this.firstname,
           lastname: this.lastname,

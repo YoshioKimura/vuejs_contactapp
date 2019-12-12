@@ -1,9 +1,10 @@
 <template>
   <section class="container">
-    <h1>view contact</h1>
+    <h1>View Contact</h1>
 
     <div class="contact--section">
-      <div class="__name">{{firstname}}{{lastname}}</div>
+      <p class="__name">{{firstname}} {{lastname}}</p>
+
       <p>{{emailaddress}}</p>
       <p>{{phonenumber}}</p>
     </div>
@@ -27,7 +28,7 @@ export default {
       .where('slug', '==', to.params.person)
       .get()
       .then((querySnapshot) => {
-        querySnapshot.forEach(doc => {
+        querySnapshot.forEach((doc) => {
           next(vm => {
             vm.firstname = doc.data().firstname
             vm.lastname = doc.data().lastname
@@ -42,7 +43,7 @@ export default {
   },
   methods: {
     fetchData () {
-      db.collection('contact')
+      db.collection('contacts')
         .where('slug', '==', this.$route.params.person)
         .get()
         .then((querySnapshot) => {
